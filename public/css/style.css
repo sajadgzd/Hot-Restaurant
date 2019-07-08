@@ -1,0 +1,53 @@
+.jumbotron {
+    margin: 0 auto;
+    width: 75%;
+}
+
+.jumbotron .frontbtn {
+    position:relative;
+    left: 5%;
+}
+
+.jumbotron .tablebtn {
+    position:relative;
+    left: 10%;
+}
+
+.jumbotron h1 {
+    position:relative;
+    left: 25%;
+
+}
+.jumbotron p {
+    position:relative;
+    left: 20%;
+    font-size:30px;
+
+}
+
+#home {
+    color:black;
+    background-color:white;
+    font-size:20px;
+}
+
+.card-title {
+    background-color: #E8E8E8;
+    border:1px;
+    border-style: solid;
+    border-color:gainsboro;
+    font-size: 18px;
+}
+
+.card {
+    position: relative;
+    left:11%;
+    border-color: gainsboro;
+    margin: 1.5%;
+    min-width:75%;
+    
+}
+
+.form-control {
+    margin-bottom: 2%;
+}
