@@ -28,22 +28,22 @@
             <form>
                 <div class="row">
                     <h5>Name</h5>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" id= "name">
                 </div>
 
                 <div class="row">
                     <h5>Phone Number</h5>
-                    <input type="text" class="form-control" data-format="+1 (ddd) ddd-dddd">
+                    <input type="text" class="form-control" data-format="+1 (ddd) ddd-dddd" id="phone">
                 </div>
 
                 <div class="row">
                     <h5>Email</h5>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
                 </div>
 
                 <div class="row">
                     <h5>Unique ID</h5>
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" id = "unique">
                 </div>
                 <button type="submit" class="btn btn-primary submit">Submit</button>
             </form>
@@ -54,9 +54,25 @@
 <script type="text/javascript">
 
        $(".submit").click(function() {
-           var newReserve = ()
+           var newReserve = {
+               name: $("#name").val(),
+               phone: $("#phone").val(),
+               email: $("#email").val(),
+               ID = $("#unique").val()
+               
+           }
 
        });
+
+      $.post("/reserve", newReserve, function(data) {
+           if (data === true) {
+               console.log("Your table is reserved")
+           } else {
+               console.log("Sorry youre in the waiting list")
+           }
+
+       });
+
 
 
 </script>
