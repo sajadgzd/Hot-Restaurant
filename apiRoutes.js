@@ -26,8 +26,10 @@ module.exports = function(app) {
 
         if (reserved.length < 5) {
             reserved.push(newCharacter);
+            res.json(true);
         } else {
             waiting.push(newCharacter);
+            res.json(false);
         }
 
     });
