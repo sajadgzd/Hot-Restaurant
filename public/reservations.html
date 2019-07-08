@@ -58,22 +58,25 @@
                name: $("#name").val(),
                phone: $("#phone").val(),
                email: $("#email").val(),
-               ID = $("#unique").val()
+               ID: $("#unique").val()
                
            }
 
-       });
-
-      $.post("/reserve", newReserve, function(data) {
+           $.post("/reserve", newReserve, function(data) {
            if (data === true) {
                console.log("Your table is reserved")
            } else {
-               console.log("Sorry youre in the waiting list")
+               console.log("Sorry you're on the waiting list")
            }
+
 
        });
 
 
+
+       });
+
+    
 
 </script>
 
