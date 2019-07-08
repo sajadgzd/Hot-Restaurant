@@ -19,6 +19,12 @@
 
 }
 
+#WaitingRegion .card {
+    width:30%;
+    background-color:#E8E8E8;
+
+}
+
 .jumbotron h1 {
     position:relative;
     left: 25%;
