@@ -8,7 +8,8 @@
     <title>Tables Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
-    <script src=“https://code.jquery.com/jquery.js“></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -24,7 +25,7 @@
 
     <div class="card" style="width: 18rem;">
         <h5 class="card-title">Current Reservations</h5>
-        <div class="card-body">
+        <div class="card-body" id="ReservationRegion">
         </div>
     </div>
 
@@ -34,18 +35,28 @@
         </div>
     </div>
 
+
     <script type="text/javascript">
-        $.get("/api/tables", function(data) {
+        $.ajax({
+            type: "get",
+            method: "GET",
+            url: "/api/tables",
+            dataType: "json"
+        })
+
+        .then(function(data) {
             console.log(data);
-            if (data) {
-                $(".card-body").show();
-                $(".card-body").text(data.name);
-            } else {
-                $(".card-body").text("Oh Oh");
-                $(".card-body").hide();
+            for (i = 0; i < data.length; i++) {
+                var newDiv = $(`<div class="card" id="reservedGuy${i}">`);
+                console.log(data[i].name);
+                $('<h5 class="reserveName">').text((i + 1) + data[i].name).appendTo(newDiv);
+                $(newDiv).appendTo("#ReservationRegion");
+
             }
+
         });
     </script>
+
 
 
 </body>
