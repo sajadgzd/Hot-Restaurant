@@ -49,7 +49,7 @@
             for (i = 0; i < data.length; i++) {
                 var newDiv = $(`<div class="card" id="reservedGuy${i}">`);
                 console.log(data[i].name);
-                $('<h5 class="reserveName">').text((i + 1) + data[i].name).appendTo(newDiv);
+                $('<h5 class="reserveName">').text((i + 1) + "\t" + data[i].name).appendTo(newDiv);
                 $(newDiv).appendTo("#ReservationRegion");
 
             }
@@ -68,7 +68,7 @@
             for (i = 0; i < data.length; i++) {
                 var newDiv = $(`<div class="card" id="waitingGuy${i}">`);
                 console.log(data[i].name);
-                $('<h5 class="waitingName">').text((i + 1) + data[i].name).appendTo(newDiv);
+                $('<h5 class="waitingName">').text((i + 1) + "\t" + data[i].name).appendTo(newDiv);
                 $(newDiv).appendTo("#WaitingRegion");
 
             }
